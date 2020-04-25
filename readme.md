@@ -13,6 +13,6 @@
 Run
 ```
 $ run "bundle update" and the "rake db:migrate"
-$ and then run  "rails s"
+$ and then run  "rails s" or "rails server"
 
 ```
