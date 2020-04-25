@@ -1,0 +1,20 @@
+<div id = "header">
+<%= link_to 'Help and Faq', help_path  %>
+<%= link_to 'Scams', scams_path  %>
+<%= link_to 'Personal', personal_path  %>
+</div>
+<%= link_to "hillarysList", root_path %> > jobs > accounting
+<br/><h1>hillarysList</h1><br/>
+
+<h2><strong> Title :<%= @listing.title %></strong></h2>
+<br/>
+<p><strong> Description :<%= @listing.description  %></strong></p>
+<br/>
+<h4><strong>ID : &nbsp; <%= @listing.id %></strong></strong></h4>
+<br/>
+
+<p><strong> Created at : &nbsp;<%= time_ago_in_words(@listing.created_at) %> ago</strong></p>
+
+
+
+    

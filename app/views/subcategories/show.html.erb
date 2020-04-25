@@ -1,0 +1,25 @@
+<div id = "header">
+<%= link_to 'Help and Faq', help_path  %>
+<%= link_to 'Scams', scams_path  %>
+<%= link_to 'Personal', personal_path  %>
+</div>
+<%= link_to "hillarysList", root_path %> > jobs > accounting
+<br/>
+<h1>hillarysList</h1><br/>
+<% if @listings.present? %>
+<% @listings.each do |listing|   %>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<ul>
+ <h3><span><%= listing.created_at.strftime('%B %d, %Y') %></span></h3>
+ <h3><span><%= link_to listing.title%> - (<%= listing.city %>, <%= listing.state %>)</span></h3>
+
+  
+</ul>
+<% end %>
+<% else %>
+  <p> No listings </p>
+<% end %>

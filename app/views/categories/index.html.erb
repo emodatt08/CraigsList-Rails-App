@@ -1,0 +1,95 @@
+<div id = "header">
+<%= link_to 'Help and Faq', help_path  %>
+<%= link_to 'Scams', scams_path  %>
+<%= link_to 'Personal', personal_path  %>
+</div>
+
+<br/>
+<br/>
+<div >
+<h1>hillarysList</h1>
+<h3><%= link_to 'post to classifieds', new_listing_path %></h3>
+<h3>Search Hillaryslist</h3>
+<input type = "text" placeholder ="search" />
+<input type = "text" placeholder ="where" /></h3>
+<h3><select>
+<option value = "Volvo">Volvo</option><br/>
+<input type = "submit" value = ">" />
+
+</select>
+</h3>
+</div>
+<div id = "section">
+
+<h1 id = "comm"><%= link_to 'Community', category_path(@community)%></h1>
+
+
+<% @community.subcategories.each do |t|  %>
+
+  <h3 id = "comm">
+<%=link_to t.name, category_subcategory_path(@community,t)  %><br/>
+
+  </h3>
+
+
+
+<% end %>
+<div id = "red">
+<h1 ><%= link_to 'RedLight',category_path(@redlight)%></h1>
+
+  <% @redlight.subcategories.each  do |h| %>
+ 
+
+  <h3 >
+ <li> <%=link_to h.name, category_subcategory_path(@redlight, h) %> </li>
+
+</h3>
+
+
+<% end %>
+</div>
+<div id = "gun">
+<h1><%= link_to 'Guns',category_path(@guns) %></h1>
+
+  <% @guns.subcategories.each  do |r| %>
+ 
+
+  <h3 >
+ <li> <%=link_to r.name, category_subcategory_path(@guns, r) %> </li>
+
+</h3>
+
+
+<% end %>
+</div>
+<h1 id = "pers"><%= link_to 'Personals', category_path(@personals) %></h1>
+
+  <% @personals.subcategories.each  do |h| %>
+
+<h3 id = "pers">
+
+ <li> <%=link_to h.name, category_subcategory_path(@personals, h)  %> </li>
+
+</h3>
+
+<% end %>
+<div id = "serv">
+<h1><%= link_to 'Services', category_path(@services) %></h1>
+
+  <% @services.subcategories.each  do |s| %>
+  
+
+  <h3>
+ <%=link_to s.name, category_subcategory_path(@services,s) %> 
+
+</h3>
+
+<% end %>
+</div>
+
+</div>
+<br/>
+<div id = "footer">
+  
+  Copyright © hillaryslist.com
+</div>

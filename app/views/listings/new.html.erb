@@ -1,0 +1,36 @@
+
+<%= javascript_include_tag 'listings.js' %>
+<div id = "header">
+<%= link_to 'Help and Faq', help_path  %>
+<%= link_to 'Scams', scams_path  %>
+<%= link_to 'Personal', personal_path  %>
+
+</div>
+
+<br/><h1>hillarysList</h1><br/>
+
+<h2>CREATE A LISTING &nbsp; </h2>
+<div id = "form">
+  <li><%= form_for @listing do |t| %></li><br/>
+ <li><%= t.label :title   %></li>
+  <%= t.text_field :title  %><br/>
+  <li><%= t.label :description %></li>
+  <%= t.text_area :description %><br/>
+ <li><%= t.label :city %></li> 
+  <%= t.text_field :city %><br/>
+   <li><%= t.label :category_id %></li>
+   <%= t.select :category_id, Category.all.map{ |t| [t.name, t.id]}%><br/>
+  <li><%= t.label :state %></li>
+  <%= t.text_field :state %><br/>
+   <li><%= t.label :subcategory_id %></li>
+   <%= t.select :subcategory_id, options_for_select([])%><br/>
+  <li> <%= t.label :zipcode %></li>
+  <%= t.text_field :zipcode, class: "zip-width" %><br/><br/>
+  <%= t.submit %>
+  
+  
+  
+  <%end%>
+  
+  
+</div>
